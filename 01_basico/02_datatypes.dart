@@ -1,5 +1,5 @@
 main() {
-  // Numeros
+  // === number ===
   // var a = 10;
   // int b = 10;
   // double c = 10.3;
@@ -12,4 +12,6 @@ main() {
   double $b = 40;
 
   print(_a + $b);
+
+  // === string ===
 }

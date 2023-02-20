@@ -29,6 +29,8 @@ Evita los errores que resultan del acceso no intencional de las variables establ
 ## Data types
 
 ```
+Numbers
+
 var --> no se recomienda usarlo, se infiere el tipo de dato
 int --> tipo entero
 double --> tipo real
