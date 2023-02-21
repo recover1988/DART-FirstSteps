@@ -4,7 +4,7 @@
 
 Case-Sensitivity: Todos los nombres de variables son sensibles a mayúsculas y minúsculas, lo cual indica que la variable num es distinta a la variable Num.
 
-Label-Rule: Las variables deben comenzar con una letra o un guión al piso ( _ ), seguido de una combinación de letras, números y guiones al piso.
+Label-Rule: Las variables deben comenzar con una letra o un guión al piso ( \_ ), seguido de una combinación de letras, números y guiones al piso.
 
 Not-Keyword: Las nombres de variables no puedes ser iguales a una palabra reservada del lenguaje Dart.
 
@@ -57,7 +57,7 @@ bool --> tipo de dato falso o verdadero
 !true --> ! significa negacion y cambia el valor a su opuesto
 variable! --> al final de una variable le indica a dart que esta variable no es null
 
-List [] 
+List []
                     0           1           2
 List<String> = ['Superman', 'Batman', 'Wonderwoman'];
 Las listas comienzan en 0, el new List() esta deprecated.
@@ -73,4 +73,11 @@ Los sets solo tienen elementos unicos, si se agrega un elemento que ya estaba, n
 ```
 
 ### Eliminar elementos duplicados de una lista
- Se puede llamar al metodo `.toSet()`, que nos devuelve un Set sin los elementos duplicados y luego los transformamo con `.toList()`
+
+Se puede llamar al metodo `.toSet()`, que nos devuelve un Set sin los elementos duplicados y luego los transformamo con `.toList()`
+
+## Final and Const
+
+- Estas variables no se pueden cambiar despues de su inicializacion.
+- final --> permite modificar con metodos.
+- const --> no se puede modificar, ni con los metodos da error.
