@@ -40,6 +40,34 @@ main() {
   List<String> villanos = ['Lex', 'Red Skull', 'Doom'];
 
   villanos[0] = 'Superman';
+  villanos.add('Duende Verde');
+  villanos.add('Duende Verde');
 
-  print(villanos);
+  // print(villanos);
+
+  // === Sets ===
+
+  Set<String> villanos2 = {'Lex', 'Red Skull', 'Doom'};
+  villanos2.add('Duende Verde');
+  villanos2.add('Duende Verde');
+
+  // print(villanos2);
+
+  // === Maps ===   Diccionarios / Objetos literales
+
+  Map<int, dynamic> ironman = {
+    1: 'Tony Stark',
+    2: 'Intelligencia y dinero',
+    3: 9000,
+  };
+
+  // print(ironman[2.1]);
+
+  Map<String, dynamic> capitan = new Map();
+  capitan.addAll({
+    'nombre': 'Steve',
+    'poder': 'Soporta droga sin morir',
+    'nivel': 5000,
+  });
+  // capitan.addAll(ironman);
 }

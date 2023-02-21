@@ -49,10 +49,20 @@ bool --> tipo de dato falso o verdadero
 !true --> ! significa negacion y cambia el valor a su opuesto
 variable! --> al final de una variable le indica a dart que esta variable no es null
 
-List
+List [] 
                     0           1           2
 List<String> = ['Superman', 'Batman', 'Wonderwoman'];
-Las listas comienzan en 0, el new List() esta deprecated
+Las listas comienzan en 0, el new List() esta deprecated.
+El list permite tener elementos duplicados
+
+Sets {}
+
+Set<String> villanos2 = {'Lex', 'Red Skull', 'Doom'};
+Sets tienen llaves.
+Los sets solo tienen elementos unicos, si se agrega un elemento que ya estaba, no se agrega.
 
 
 ```
+
+### Eliminar elementos duplicados de una lista
+ Se puede llamar al metodo `.toSet()`, que nos devuelve un Set sin los elementos duplicados y luego los transformamo con `.toList()`
