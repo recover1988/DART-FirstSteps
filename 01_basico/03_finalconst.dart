@@ -12,4 +12,6 @@ main() {
 
   // print(personasFinal);
   // print(personasConst);
+
+  double x = 12.34;
 }
