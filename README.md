@@ -1,5 +1,13 @@
 # DART-FirstSteps
 
+## Reglas para el nombrado de variables
+
+Case-Sensitivity: Todos los nombres de variables son sensibles a mayúsculas y minúsculas, lo cual indica que la variable num es distinta a la variable Num.
+
+Label-Rule: Las variables deben comenzar con una letra o un guión al piso ( _ ), seguido de una combinación de letras, números y guiones al piso.
+
+Not-Keyword: Las nombres de variables no puedes ser iguales a una palabra reservada del lenguaje Dart.
+
 ## Palabras Reservadas
 
 | abstract | continue | FALSE      | new      | this    |
