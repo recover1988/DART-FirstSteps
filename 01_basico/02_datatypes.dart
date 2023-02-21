@@ -10,8 +10,36 @@ main() {
 
   int _a = 30;
   double $b = 40;
-
-  print(_a + $b);
+  double resultado = _a + $b;
+  // print(_a + $b);
 
   // === string ===
+
+  var nombre = 'Tony';
+  String name = 'Ana';
+  String? name2; // ? puede ser nulo
+  String name3 = "O'Connor";
+
+  String nombreCompleto = '$nombre $name3';
+
+  String multilinea = '''
+    hola mundo
+    $name3
+    ¿Como estas?
+    O'Connor''';
+
+  // print(nombreCompleto);
+
+  // === booleans ===
+  bool isActive = true;
+  bool isNotActive = !isActive;
+
+  // print(isNotActive);
+
+  // === Lists ===
+  List<String> villanos = ['Lex', 'Red Skull', 'Doom'];
+
+  villanos[0] = 'Superman';
+
+  print(villanos);
 }
