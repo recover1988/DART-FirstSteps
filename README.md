@@ -76,8 +76,42 @@ Los sets solo tienen elementos unicos, si se agrega un elemento que ya estaba, n
 
 Se puede llamar al metodo `.toSet()`, que nos devuelve un Set sin los elementos duplicados y luego los transformamo con `.toList()`
 
-## Final and Const
+## Final, Const and Late
 
 - Estas variables no se pueden cambiar despues de su inicializacion.
 - final --> permite modificar con metodos.
 - const --> no se puede modificar, ni con los metodos da error.
+- final --> no permite apuntar a un nuevo espacio de memoria.
+- late --> se puede usar al declarar una variable no anulable que se inicializa después de su declaración.
+- late --> es posible que la variable no sea necesaria e inicializarla sea costoso.
+- late --> Está inicializando una variable de instancia y su inicializador necesita acceso a esto.
+
+#### Ejemplos late:
+
+```
+SIN LATE
+
+//START
+String result = _getResult( );
+//END
+```
+
+En el código anterior, el `result` nunca se usa, pero \_getResult( )se ejecuta.
+
+```
+CON LATE
+
+//START
+late String result = _getResult( );
+//END
+```
+
+En el código anterior \_getResult( ) no se ejecuta porque la variable `result` nunca se usa y se declara usando el modificador tardío.
+
+## Comentarios
+
+/// y [variable] --> para usar en documentacion
+
+/**
+*    --> para hacer comentario multilinea
+*/
