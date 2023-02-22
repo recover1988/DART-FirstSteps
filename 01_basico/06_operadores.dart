@@ -9,7 +9,7 @@ void main(List<String> args) {
   int c = 23;
   String resp = c > 25 ? 'C es mayor a 25' : 'C es menor a 25';
 
-  int d = b ?? a ?? 100; // si b es nulo entonces usa a
+  // int d = b ?? a ?? 100; // si b es nulo entonces usa a
 
   // Operadores Relacionales
   // todo retorna un valor booleano
