@@ -114,7 +114,7 @@ En el código anterior \_getResult( ) no se ejecuta porque la variable `result` 
 
 /_ \*\* _/ --> para hacer comentario multilinea
 
-## Parameters
+## Parameters (Args Posicionales y Args por Nombre)
 
 ```
 void saludar(String mensaje,
@@ -142,3 +142,6 @@ void main(List<String> args) {
 ```
 
 Podemos pasar argumentos por posicion, o por nombre que seria poniendo las llaves { }, y luego las pasamos a la funcion.
+
+- Los `Objetos` se manda por referencias como mapas, arreglos.
+- Los primitivos no se mandan por referencia sino que se mandan su valor y se crean en nuevos espacios de memoria.
