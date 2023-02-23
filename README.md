@@ -112,6 +112,15 @@ En el código anterior \_getResult( ) no se ejecuta porque la variable `result` 
 
 /// y [variable] --> para usar en documentacion
 
-/**
-*    --> para hacer comentario multilinea
-*/
+/_ \*\* _/ --> para hacer comentario multilinea
+
+## Parameters
+
+```
+void saludar(String mensaje,
+[String nombre = '<Insertar Nombre>', int edad = 20]) {
+  print('$mensaje $nombre - $edad');
+}
+```
+
+Entre llaves [] se colocan los argumentos opcionales que puede estar iniciados o se puede poner ? para decir que puede tener un valor o ser null
