@@ -124,3 +124,21 @@ void saludar(String mensaje,
 ```
 
 Entre llaves [] se colocan los argumentos opcionales que puede estar iniciados o se puede poner ? para decir que puede tener un valor o ser null
+
+```
+void saludar2(String mensaje,{ required String nombre, int veces = 10}) {
+  // cuerpo de la funcion
+  print('Saludar2: $mensaje $nombre - $veces');
+}
+
+```
+
+```
+void main(List<String> args) {
+  saludar('Hola', 'Eric', 23);
+  saludar2('saludo',nombre: 'Toni');
+}
+
+```
+
+Podemos pasar argumentos por posicion, o por nombre que seria poniendo las llaves { }, y luego las pasamos a la funcion.
