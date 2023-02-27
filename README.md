@@ -214,3 +214,26 @@ Future<int>
 Future<Modelo>
 Future<List>
 Los futures resuelven a algun tipo de dato, generalmente se usa para hacer peticiones http donde se espera la respuesta de un servidor.
+
+#### CatchError --> Manejo de errores
+
+```
+void main(List<String> args) {
+  Future timeout = Future.delayed(Duration(seconds: 3), () {
+
+  if(1==1){
+    throw 'Auxilio!, exploto esta cosa';
+  };
+
+
+    return 'Retorno de future';
+  });
+
+  // timeout.then((text) => print(text));
+  timeout.then(print)
+  .catchError((error)=> print(error));
+
+  print('fin del main');
+}
+```
+Todos los futures deben tener un catcherror para manejar los errores.
