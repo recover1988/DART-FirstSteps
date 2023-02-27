@@ -145,3 +145,72 @@ Podemos pasar argumentos por posicion, o por nombre que seria poniendo las llave
 
 - Los `Objetos` se manda por referencias como mapas, arreglos.
 - Los primitivos no se mandan por referencia sino que se mandan su valor y se crean en nuevos espacios de memoria.
+
+## Tipos de Datos No Comunes
+
+#### Queue
+
+```
+void main(List<String> args) {
+  Queue<int> cola = new Queue();
+  cola.addAll([10, 20, 30, 40, 50]);
+  // print(cola is Queue);
+
+  Iterator i = cola.iterator;
+  while (i.moveNext()) {
+    print(i.current);
+  }
+}
+```
+
+Este tipo de dato funciona como un ciclo for pero es mas eficiente.
+
+#### Enum
+
+```
+void main(List<String> args) {
+  Audio volumen = Audio.alto;
+  switch (volumen) {
+    case Audio.bajo:
+      print('Volumen bajo');
+      break;
+    case Audio.medio:
+      print('Volumen medio');
+      break;
+    case Audio.alto:
+      print('Volumen alto');
+      break;
+  }
+}
+
+enum Audio { bajo, medio, alto }
+```
+
+El enum sirve para tener un codigo mas limpio.
+
+### future
+
+```
+void main(List<String> args) {
+  Future timeout = Future.delayed(Duration(seconds: 3), () {
+    print('3 segundos despues');
+    return 'Retorno de future';
+  });
+
+  // timeout.then((text) => print(text));
+  timeout.then(print);
+
+  print('fin del main');
+}
+
+```
+
+Estan basados en las promesa de javascript. Una tarea asincrona que se va a resolver en el futuro. La promesa de que va a retornar un objeto.
+Un Future puede esperar cualquier tipo de objeto y/o tipos de datos:
+Future<bool>
+Future<String>
+Future<double>
+Future<int>
+Future<Modelo>
+Future<List>
+Los futures resuelven a algun tipo de dato, generalmente se usa para hacer peticiones http donde se espera la respuesta de un servidor.
