@@ -236,4 +236,95 @@ void main(List<String> args) {
   print('fin del main');
 }
 ```
+
 Todos los futures deben tener un catcherror para manejar los errores.
+
+### Stream
+
+la mejor analogía para un Stream es una cinta transportadora. Puede colocar un artículo en un lado y será transportado automáticamente al otro. Los streams actúan como cintas transportadoras, pero en lugar de elementos físicos podemos poner un objeto de datos en la cinta y ésta los transportará automáticamente, pero ¿hacia dónde? Bueno, como con un transportador de verdad, si no hay nadie que los atrape al final, entonces los objetos se dejan caer y se pierden. (Ok, esto no es del todo cierto con Dart Streams pero es mejor tratar los Streams como si lo fueran.)
+Para evitar que su objeto de datos caiga en el vacío, puede configurar una “trampa” al final de un Stream. La trampa atrapará cualquier objeto que llegue y hará algo (reaccionará) cada vez que atrape un objeto que llegue al final del cinturón.
+
+```
+import 'dart:async';
+
+void main(List<String> args) {
+  final streamController = StreamController();
+
+  streamController.stream.listen((data) => print('Despegando $data'),
+      onError: (err) => print('Error! $err'),
+      onDone: () => print('Mision Completa!'),
+      cancelOnError: false);
+
+  streamController.sink.add('Apollo 11');
+  streamController.sink.add('Apollo 12');
+  streamController.sink.add('Apollo 13');
+  streamController.sink.addError('Houston, tenemos un problema!');
+  streamController.sink.add('Apollo 14');
+  streamController.sink.add('Apollo 15');
+
+  streamController.sink.close();
+
+  print('Fin del main');
+}
+
+```
+
+`callback` -> esta es la funcion que puede manipular los datos en el stream.
+`onError` -> es un listen que sucede cuando ocurre un error.
+`onDone` -> cuando se cierra el stream con `sink.close()` ejecuta esta funcion
+`cancelOnError` -> admite valor booleano y termina o permite la ejecucion del stream si ocurre un error.
+
+#### Formas de poner tipado al Stream
+
+```
+final StreamController<String> streamController = StreamController();
+
+final streamController = StreamController<String>();
+```
+
+#### Streams de una subcripcion y de multiples subscripciones
+
+Tenemos `stream` de una subscripcion
+
+```
+final streamController = StreamController<String>();
+```
+
+Y para tener varios listener se pone el `.broadcast()`
+
+```
+final streamController = StreamController<String>.broadcast();
+```
+
+que permite tener varios listener sin cancelar subscripciones
+
+```
+import 'dart:async';
+
+void main(List<String> args) {
+  // final StreamController<String> streamController = StreamController();
+  final streamController = StreamController<String>.broadcast();
+
+  streamController.stream.listen((data) => print('Despegando $data'),
+      onError: (err) => print('Error! $err'),
+      onDone: () => print('Mision Completa!'),
+      cancelOnError: false);
+
+  streamController.stream.listen((data) => print('Despegando stream 2 $data'),
+      onError: (err) => print('Error! stream 2 $err'),
+      onDone: () => print('Mision Completa! stream 2'),
+      cancelOnError: false);
+
+  streamController.sink.add('Apollo 11');
+  streamController.sink.add('Apollo 12');
+  streamController.sink.add('Apollo 13');
+  streamController.sink.addError('Houston, tenemos un problema!');
+  streamController.sink.add('Apollo 14');
+  streamController.sink.add('Apollo 15');
+
+  streamController.sink.close();
+
+  print('Fin del main');
+}
+
+```
