@@ -360,7 +360,29 @@ class Persona {
 
 ## Clases en archivos independientes
 
+Se recomienda y es buena practica tener las clases en archivos separados e importalos en donde se lo necesita.
+Tambien se puede optimizar el codigo de la siguien forma:
+
+```
+import 'clases/persona.dart';
+
+void main(List<String> args) {
+  final persona = new Persona();
+  persona
+    ..nombre = 'Fernando'
+    ..edad = 23
+    ..bio = 'Guadalajara';
+
+  print(persona);
+}
+
+```
+
+Los `..` nos indican que es la propiedad de la misma clase.
+
 ## Propiedades públicas y privadas
+
+Las propiedades privadas se señalan con `_`, esto indica que este propiedad o metodo solo puede ser usado dentro del contexto en que se definio y no puede ser llamada o invacada desde afuera.
 
 ## Getters
 
