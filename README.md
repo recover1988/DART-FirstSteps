@@ -328,3 +328,54 @@ void main(List<String> args) {
 }
 
 ```
+
+# Clases
+
+Aquí empezaremos a trabajar con nuestras clases personalizadas en Dart, también quiero recordarles que en los constructores de las clases en Dart, podemos mandar argumentos con nombre, posicionales, opcionales y valores por defecto
+
+Puntualmente veremos:
+
+## Estructura de una clase
+
+Las clases en dart se inicializan y tiene las sigueinte propiedeades y metodos:
+
+```
+class Persona {
+// campos o propiedades
+  String? nombre;
+  int? edad;
+  String? bio;
+// Get y sets
+
+// Constructores
+
+// metodos
+  @override
+  String toString() {
+    return '$nombre $edad $bio';
+  }
+}
+
+```
+
+## Clases en archivos independientes
+
+## Propiedades públicas y privadas
+
+## Getters
+
+## Setters
+
+## Constructores básicos
+
+## Constructores con nombre
+
+## Propiedades finales
+
+## Constructores constantes
+
+## Constructores factory
+
+## Propiedades y métodos estáticos
+
+## Singleton
