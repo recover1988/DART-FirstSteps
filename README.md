@@ -331,7 +331,8 @@ void main(List<String> args) {
 
 # Clases
 
-Aquí empezaremos a trabajar con nuestras clases personalizadas en Dart, también quiero recordarles que en los constructores de las clases en Dart, podemos mandar argumentos con nombre, posicionales, opcionales y valores por defecto
+Aquí empezaremos a trabajar con nuestras clases personalizadas en Dart, también quiero recordarles que en los constructores de las clases en Dart, podemos mandar argumentos con nombre, posicionales, opcionales y valores por defecto.
+Una funcion se conoce como metodo dentro de una clase, y un valor es una propiedad.
 
 Puntualmente veremos:
 
@@ -386,7 +387,26 @@ Las propiedades privadas se señalan con `_`, esto indica que este propiedad o m
 
 ## Getters
 
+Los getters son metodos que no requieren valores de entrada por eso se define con el tipo de dato, la palabra reservada `get` y el nombre.
+
+```
+  // String get bio {
+  //   return _bio!.toUpperCase();
+  // }
+
+  String get bio => _bio!.toUpperCase();
+```
+
 ## Setters
+
+Los setters si requierene un dato de entrada el cual debe tener su tipo, ademas estos no devuelven nada y tiene el return `void` implicito
+
+```
+  // void set bio(String texto) {
+  //   _bio = texto;
+  // }
+  void set bio(String texto) => _bio = texto;
+```
 
 ## Constructores básicos
 

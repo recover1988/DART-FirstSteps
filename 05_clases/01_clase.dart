@@ -7,5 +7,7 @@ void main(List<String> args) {
     ..edad = 23;
   // ..bio = 'Guadalajara';
 
-  print(persona);
+  persona.bio = 'Cambie el valor';
+
+  print(persona.info);
 }
