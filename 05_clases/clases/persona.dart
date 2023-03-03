@@ -21,7 +21,26 @@ class Persona {
   }
 
 // Constructores
+  // Persona(int edad, String nombre) {
+  //   this.edad = edad;
+  //   this.nombre = nombre;
+  //   // print('constructor');
+  //   // _bio = 'Hola desde el constructor';
+  // }
 
+  Persona({this.edad = 0, this.nombre = ''});
+
+  //Crear un nuevo constructor pero con nombre
+  Persona.persona30(this.nombre) {
+    this.edad = 30;
+  }
+
+  Persona.persona40(this.nombre) {
+    this.edad = 40;
+  }
+  Persona.incorrecto(this.nombre) {
+    this._bio = 'Usuario incorrecto';
+  }
 // metodos
   @override
   String toString() {

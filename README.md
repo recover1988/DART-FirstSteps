@@ -410,7 +410,73 @@ Los setters si requierene un dato de entrada el cual debe tener su tipo, ademas 
 
 ## Constructores básicos
 
+El constructor se inicializa con la instancia de la clase, puede estar implicito tambien.
+
+```
+// Constructores
+  Persona();
+```
+
+Este constructor es permitido, este debe estar dentro de la clase y tiene que tener el mismo nombre que la clase.
+El constructor es uno d elos elementos que primero se ejecutan en la clase
+
+```
+  Persona() {
+    print('constructor');
+  }
+
+```
+
+Podemos hacer el constructor de forma explicita:
+
+```
+  Persona(int edad, String nombre) {
+    this.edad = edad;
+    this.nombre = nombre;
+  }
+
+```
+
+O de forma implicita:
+
+```
+  Persona(this.edad, this.nombre);
+```
+
+Argumento posicional no obligatorio
+
+Si le ponemos `{this.nombre}` hacemos que este argumento sea opcional, y luego para enviar el dato hacemos como si fuera una propiedad de un objeto
+
+```
+final persona = new Persona(33, nombre: 'Eric');
+```
+
+Para poner valores
+
+```
+ Persona({this.edad = 0, this.nombre = ''})
+```
+
 ## Constructores con nombre
+
+Para crear mas constructores, lo que se hace es nombrarlos:
+
+```
+  Persona({this.edad = 0, this.nombre = ''});
+
+  //Crear un nuevo constructor pero con nombre
+  Persona.persona30(this.nombre) {
+    this.edad = 30;
+  }
+```
+
+Aca tenemos dos constructores uno que es `Persona` y otro que es `Persona.persona30`, y para usarlo nos vamo a la funcion:
+
+```
+ final persona2 = new Persona.persona30('Maria');
+```
+
+Instancias el segundo constructor. A este constructor nombrado se el puede definir propiedades y cabmiar alguna.
 
 ## Propiedades finales
 
