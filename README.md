@@ -743,3 +743,47 @@ Con el decorador `@override` indicamos que estamos sobreescribiendo un metodo de
 Con el metodo `super.` estamos invocando el metodo de la clase padre.
 
 ## Mixins
+
+Es para dar los metodos y propiedades de una clase a otra, muy parecido a los extends.
+La diferencia con una clase abstracta es que los mixins no pueden tener un constructor y tampoco crear instancias.
+Estan hechos para heredar o trasnferir sus propiedades y metodos a otra clase.
+
+```
+mixin Logger {
+  void imprimir(String texto) {
+    final hoy = DateTime.now();
+    print('$hoy :::::: $texto');
+  }
+}
+
+class Logger2 {
+  void imprimir2(String texto) {
+    final hoy = DateTime.now();
+    print('$hoy :::::: $texto');
+  }
+}
+
+abstract class Astro with Logger {
+  String? nombre;
+  Astro() {
+    imprimir('---- init del Astro-----');
+  }
+
+  void existo() {
+    imprimir('___ Soy un ser celestial ___');
+  }
+}
+
+class Asteroide extends Astro with Logger, Logger2 {
+  String? nombre;
+  Asteroide(this.nombre) {
+    // imprimir('Soy el $nombre');
+    imprimir2('Soy el $nombre');
+  }
+}
+
+void main(List<String> args) {
+  final ceres = new Asteroide('Ceres');
+}
+
+```
