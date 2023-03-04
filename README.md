@@ -834,6 +834,36 @@ negativeInfinity → const double
 ```
 
 ## Métodos y propiedades de Strings
+Propiedades:
+```
+codeUnits → List<int>
+Returns an unmodifiable list of the UTF-16 code units of this string.
+read-only
+
+hashCode → int
+Returns a hash code derived from the code units of the string. [...]
+read-only, override
+
+isEmpty → bool
+Returns true if this string is empty.
+read-only
+
+isNotEmpty → bool
+Returns true if this string is not empty.
+read-only
+
+length → int
+The length of the string. [...]
+read-only
+
+runes → Runes
+Returns an Iterable of Unicode code-points of this string. [...]
+read-only
+
+runtimeType → Type
+A representation of the runtime type of the object.
+read-only, inherited
+```
 
 ## Métodos y propiedades de Listas
 
