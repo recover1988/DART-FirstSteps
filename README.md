@@ -540,6 +540,90 @@ void main(List<String> args) {
 
 ## Constructores factory
 
+Constructor factory nunca crea una instancia, solo puede retorna la creacion de una nueva instancia, o una variable o intancia previamente creada.
+'''
+factory Reactangulo(int base, int altura) {
+if (base == altura) {
+return Reactangulo.cuadrado(base);
+} else {
+return Reactangulo.rectangulo(base, altura);
+}
+}
+'''
+
 ## Propiedades y métodos estáticos
 
+Un metodo estatico se puede llamar sin instanciar la clase, por lo general son elemento de tipo constantes, para que no se puedan modificar por ningun metodo (como los final que si se pueden modificar con los metodos).
+El static indica que puedo ingresar a esos metodos o propiedades sin intancias la clase.
+
+```
+class Herramientas {
+  static const List<String> listado = [
+    'Martillo',
+    'Llave Inglesa',
+    'Desarmador'
+  ];
+  static void imprimirListadp() => listado.forEach(print);
+}
+
+void main(List<String> args) {
+  // final herr = new Herramientas();
+  // Herramientas.listado.add('Tenaza');
+  Herramientas.imprimirListadp();
+}
+
+```
+
 ## Singleton
+
+Nos permite tener la informacion centralizada porque cada instancia va a regresar siempre la primera.
+
+Un patron singleton consta de 3 parte.
+1 - constructor privado genera una instancia.
+2 - propiedad estatica privada que sirva para mantener una instancia o referencia en memoria demi servicio previamente creado.
+3 - el constructor normal de la clase
+
+```
+class MiServicio {
+  static final MiServicio _singleton = new MiServicio._internal(); // 2
+  factory MiServicio() { // 3
+    return _singleton;
+  }
+
+  MiServicio._internal(); // 1
+
+  String url = 'http://abs.comm';
+  String key = 'ADSAWE123';
+}
+
+```
+
+Con esto podemos realizar distintas instancias de la clase, pero siempre van a apuntar al mismo espacio de memoria.
+
+```
+import 'clases/mi_servicio.dart';
+
+void main(List<String> args) {
+  final spotifyService1 = new MiServicio();
+  spotifyService1.url = 'httt://api.spotify.com/v3';
+
+  final spotifyService2 = new MiServicio();
+  spotifyService2.url = 'httt://api.spotify.com/v3';
+
+  print(spotifyService1 == spotifyService2);
+
+  print(spotifyService1.url);
+  print(spotifyService2.url);
+}
+
+```
+
+## Extends
+
+## Clases abstractas
+
+## Super Constructor
+
+## Override
+
+## Mixins
