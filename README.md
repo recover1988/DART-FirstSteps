@@ -787,3 +787,13 @@ void main(List<String> args) {
 }
 
 ```
+
+## Métodos y propiedades de doubles
+
+## Métodos y propiedades de Strings
+
+## Métodos y propiedades de Listas
+
+## Métodos y propiedades de Mapas
+
+## Leer la documentación
