@@ -699,6 +699,47 @@ Se recomienda mostrar el @override si se va a cambiar algun metodo de la clase p
 
 ## Super Constructor
 
+El super sirve para poder inicializar las propiedades que tiene el padre.
+
+```
+class Persona {
+  String nombre;
+  int edad;
+
+  Persona(this.nombre, this.edad);
+
+  void imprimirNombre() => print('Nombre: $nombre , Edad: $edad');
+}
+
+class Cliente extends Persona {
+  String? direccion;
+  List ordenes = [];
+
+  Cliente(int edadActual, String nombreActual)
+      : super(nombreActual, edadActual);
+}
+
+void main(List<String> args) {
+  final pedro = new Cliente(34, 'Eric');
+  pedro.imprimirNombre();
+}
+
+```
+
+Con los ':' le decimos que se inicialize primero el super.
+
 ## Override
+
+Con el decorador `@override` indicamos que estamos sobreescribiendo un metodo de la clase padre, asi es mas facil de ver para otros desarrolladores.
+
+```
+  @override
+  void imprimirNombre() {
+    super.imprimirNombre();
+    print('Cliente: $nombre ($edad)');
+  }
+```
+
+Con el metodo `super.` estamos invocando el metodo de la clase padre.
 
 ## Mixins
