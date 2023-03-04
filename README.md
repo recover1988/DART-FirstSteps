@@ -620,7 +620,82 @@ void main(List<String> args) {
 
 ## Extends
 
+Al crear una clase si queremos manejar los metodos y propiedades de una clase existente podemos usar el `extends`. De esta forma podemos usar en la nueva clase los metodos y propiedades de la clase heredadd.
+
+```
+class Vehiculo {
+  bool encendido = false;
+
+  void encender() {
+    encendido = true;
+    print('Vehiculo Encendido');
+  }
+
+  void apagar() {
+    encendido = false;
+    print('Vehiculo Apagado');
+  }
+}
+
+class Carro extends Vehiculo {
+  int kilometraje = 0;
+  void mover() {
+    print('Arrancando $encendido');
+  }
+}
+
+void main(List<String> args) {
+  final ford = new Carro();
+  ford.apagar();
+  ford.mover();
+}
+
+```
+
 ## Clases abstractas
+
+Solo sirve para hederar sus metodos y propiedades a otras clases con el extend. No pueden ser instanciadas y solo sirve de cascaron para otras clases.
+
+```
+abstract class Vehiculo {
+  bool encendido = false;
+
+  void encender() {
+    encendido = true;
+    print('Vehiculo Encendido');
+  }
+
+  void apagar() {
+    encendido = false;
+    print('Vehiculo Apagado');
+  }
+
+  bool revisarMotor();
+}
+
+class Carro extends Vehiculo {
+  int kilometraje = 0;
+  void mover() {
+    print('Arrancando $encendido');
+  }
+
+  @override // sobreescribir un metodo del padre
+  bool revisarMotor() {
+    print('Motor Ok!!');
+    return true;
+  }
+}
+
+void main(List<String> args) {
+  final ford = new Carro();
+  ford.encender();
+  ford.apagar();
+  ford.revisarMotor();
+}
+
+```
+
+Se recomienda mostrar el @override si se va a cambiar algun metodo de la clase padre.
 
 ## Super Constructor
 
