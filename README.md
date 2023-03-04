@@ -790,6 +790,49 @@ void main(List<String> args) {
 
 ## Métodos y propiedades de doubles
 
+Cuando le damos el tipo a una variables estamos instanciando esa variable asu tipo, osea que esa variables tiene propiedades y metodos del tipo al que fue nombrada.
+El metodo doubles tiene algunas propiedades como:
+
+```
+sign → double
+hashCode → int
+isFinite → bool
+isNaN → bool
+isNegative → bool
+runtimeType → Type
+```
+
+y metodos como:
+
+```
+abs() → double
+ceil() → int
+ceilToDouble() → double
+floor() → int
+round() → int
+toString() → String
+toInt() → int
+```
+
+#### Constantes
+
+```
+infinity → const double
+1.0 / 0.0
+
+maxFinite → const double
+1.7976931348623157e+308
+
+minPositive → const double
+5e-324
+
+nan → const double
+0.0 / 0.0
+
+negativeInfinity → const double
+-infinity
+```
+
 ## Métodos y propiedades de Strings
 
 ## Métodos y propiedades de Listas
