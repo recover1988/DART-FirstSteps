@@ -21,6 +21,15 @@ void main(List<String> args) {
   //     return false;
   //   }
   // });
-  persona.removeWhere((key, value) => (key != 'nombre' ? true : false));
-  print('removeWhere: $persona');
+  // persona.removeWhere((key, value) => (key != 'nombre' ? true : false));
+  // print('removeWhere: $persona');
+
+  persona.forEach((key, value) {
+    print('key: $key , value: $value');
+  });
+
+  final newMap = persona.map((key, value) {
+    return MapEntry(key, value.toString().toUpperCase());
+  });
+  print('Map: $newMap');
 }
